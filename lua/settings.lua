@@ -15,7 +15,7 @@ vim.o.mouse = 'a'
 
 vim.cmd(':set colorcolumn=80')
 vim.cmd('set nobackup')
-vim.cmd('set undodir=undodir')
+vim.cmd('set undodir=~/.config/nvim/undodir')
 vim.cmd('set undofile')
 vim.cmd('set listchars=tab:›\\ ,eol:¬,trail:⋅')
 vim.cmd('set list')

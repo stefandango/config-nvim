@@ -112,6 +112,18 @@ _G.packer_plugins = {
   ["packer.nvim"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  },
+  undotree = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/undotree"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+  },
+  ["vim-smoothie"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/vim-smoothie"
   }
 }
 

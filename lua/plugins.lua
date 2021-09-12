@@ -11,6 +11,7 @@ end
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+
   -- Nvim Tree
   use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'}
   vim.cmd('let g:nvim_tree_auto_close = 1')
@@ -22,12 +23,14 @@ return require('packer').startup(function(use)
   -- Theme
   use 'navarasu/onedark.nvim'
   vim.cmd('let g:onedark_style = \'warmer\'')
+
   --vim.cmd('colorscheme onedark')
   vim.g.onedark_transparent_background = true
   require('onedark').setup()
 
   -- lsp config (Autocomplete)
   use 'neovim/nvim-lspconfig'
+  use 'glepnir/lspsaga.nvim'
   use 'hrsh7th/nvim-compe'
 
   -- lualine
@@ -45,10 +48,13 @@ return require('packer').startup(function(use)
   --use 'mhartington/formatter.nvim'
   --use ...lps saga
   --use telescope...
+
   -- Undotree for better view of changes of files
   use 'mbbill/undotree'
 
   -- Smooth scroll for crtl-d and crtl-u
   use 'psliwka/vim-smoothie'
 
+  -- GIT
+  --use 'tpope/vim-fugitive'
 end)
