@@ -4,6 +4,7 @@ require('keymaps')
 require('nvim-compe')
 require('lspsetup')
 require('nvim-autopairs').setup{}
+require'nvim-tree'.setup()
 require'lualine'.setup {
     options = {
         theme = 'onedark'

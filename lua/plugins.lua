@@ -13,11 +13,15 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- Nvim Tree
-  use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'}
-  vim.cmd('let g:nvim_tree_auto_close = 1')
+  use {'kyazdani42/nvim-tree.lua',
+  requires = 'kyazdani42/nvim-web-devicons',
+      config = function() require'nvim-tree'.setup {
+          auto_close = true,
+          update_cwd = true
+      } end
+  }
   vim.cmd('let g:nvim_tree_ignore = [ \'node_modules\', \'.cache\' ]')
   vim.cmd('let g:nvim_tree_highlight_opened_files = 1 ')
-  vim.cmd('let g:nvim_tree_update_cwd = 1')
   vim.cmd('let g:nvim_tree_quit_on_open = 1')
 
   -- Theme
@@ -45,7 +49,7 @@ return require('packer').startup(function(use)
   -- Autopairs
   use 'windwp/nvim-autopairs'
   use 'Yggdroot/indentLine'
-  --use 'mhartington/formatter.nvim'
+--  use 'mhartington/formatter.nvim'
   --use ...lps saga
   --use telescope...
 
@@ -57,4 +61,5 @@ return require('packer').startup(function(use)
 
   -- GIT
   --use 'tpope/vim-fugitive'
+  use 'OmniSharp/omnisharp-vim'
 end)
