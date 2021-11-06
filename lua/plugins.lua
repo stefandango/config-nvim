@@ -1,4 +1,4 @@
-local execute = vim.api.nvim_command
+
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
@@ -11,7 +11,6 @@ end
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-
   -- Nvim Tree
   use {'kyazdani42/nvim-tree.lua',
   requires = 'kyazdani42/nvim-web-devicons',
@@ -20,7 +19,7 @@ return require('packer').startup(function(use)
           update_cwd = true
       } end
   }
-  vim.cmd('let g:nvim_tree_ignore = [ \'node_modules\', \'.cache\' ]')
+--  vim.cmd('let g:nvim_tree_ignore = [ \'node_modules\', \'.cache\' ]')
   vim.cmd('let g:nvim_tree_highlight_opened_files = 1 ')
   vim.cmd('let g:nvim_tree_quit_on_open = 1')
 
@@ -34,9 +33,17 @@ return require('packer').startup(function(use)
 
   -- lsp config (Autocomplete)
   use 'neovim/nvim-lspconfig'
-  use 'glepnir/lspsaga.nvim'
-  use 'hrsh7th/nvim-compe'
+  --use 'hrsh7th/nvim-compe'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-nvim-lua'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'onsails/lspkind-nvim'
+  use 'ray-x/lsp_signature.nvim'
 
+-- NOT MAINTAINED...  use 'glepnir/lspsaga.nvim'
+  use 'tami5/lspsaga.nvim'
   -- lualine
   use {
   'hoob3rt/lualine.nvim',
@@ -50,7 +57,6 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-autopairs'
   use 'Yggdroot/indentLine'
 --  use 'mhartington/formatter.nvim'
-  --use ...lps saga
   --use telescope...
 
   -- Undotree for better view of changes of files
@@ -59,7 +65,14 @@ return require('packer').startup(function(use)
   -- Smooth scroll for crtl-d and crtl-u
   use 'psliwka/vim-smoothie'
 
+-- COMMENT TOGGLE
+--  use 'terrortylor/nvim-comment'
+use 'tpope/vim-commentary'
+--
+--  use 'markwoodhall/vim-nuget'
   -- GIT
   --use 'tpope/vim-fugitive'
-  use 'OmniSharp/omnisharp-vim'
+-- Experimental
+--use 'OmniSharp/omnisharp-vim'
+--use 'dense-analysis/ale'
 end)

@@ -63,7 +63,7 @@ local keys = {
 		["<C-l>"] = "<C-w>l",
 		-- No hl
 		["<Leader>h"] = ":set hlsearch!<CR>",
-		-- nvimtree explorer toggle
+		-- nvimtree explorer toggle --> USE C-. instead
 		["<C-n>"] = ":NvimTreeToggle<CR>",
 		-- Tab switch buffer
 		["<S-l>"] = ":bnext<CR>",

@@ -28,3 +28,8 @@ vim.cmd('set signcolumn=yes')
 
 vim.wo.wrap = false
 vim.wo.cursorline = true
+
+-- sets comment string for c style files to //
+vim.cmd('autocmd BufEnter *.cpp,*.h,*.cs :lua vim.api.nvim_buf_set_option(0, "commentstring", "// %s")')
+--when you've changed the name of a file opened in a buffer, the file type may have changed
+vim.cmd('autocmd BufFilePost *.cpp,*.h,*.cs :lua vim.api.nvim_buf_set_option(0, "commentstring", "// %s")')
